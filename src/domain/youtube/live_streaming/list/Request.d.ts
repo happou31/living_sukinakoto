@@ -1,6 +1,6 @@
 import * as Base from "../../Base";
 
-export default interface GetParam {
+export default interface ListAPIGetParam {
   part: Base.PartRequestParam;
   broadcastStatus?: "active" | "all" | "completed" | "upcoming";
   id?: string;
