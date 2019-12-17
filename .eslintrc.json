@@ -20,7 +20,11 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "no-empty": "off"
+    "no-empty": "off",
+    "max-len": ["warn", {
+      "code": 100,
+      "ignoreTemplateLiterals": false
+    }]
   },
 
   "settings": {
