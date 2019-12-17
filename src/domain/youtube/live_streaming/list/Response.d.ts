@@ -6,7 +6,6 @@ export default interface ListAPIResponse {
   items: IdItem | SnippetItem | ContentDetailsItem[];
 }
 
-
 interface PageInfo {
   totalResults: number;
   resultsPerPage: number;
@@ -23,9 +22,8 @@ interface SnippetItem {
   etag: string;
   id: string;
 
-  snippet: Snippet
+  snippet: Snippet;
 }
-
 
 interface Snippet {
   publishedAt: string;
@@ -52,7 +50,6 @@ interface ThumbnailDetail {
   width: number;
   height: number;
 }
-
 
 interface ContentDetailsItem {
   kind: "youtube#liveBroadcast";
