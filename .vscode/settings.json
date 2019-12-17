@@ -1,0 +1,9 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.nodePath": "/home/happo31/.nvm/versions/node/v12.13.1/bin/node",
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+}
