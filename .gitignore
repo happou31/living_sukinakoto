@@ -1,2 +1,9 @@
 node_modules/
 oauth_info.json
+.env
+
+.etc/letsencrypt/*
+!.etc/letsencrypt/.gitkeep
+
+.etc/nginx/*
+!.etc/nginx/.gitkeep
