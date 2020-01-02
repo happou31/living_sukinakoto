@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1.17.6
+    container_name: nginx
+    volumes:
+      - ./.etc/nginx:/etc/nginx
+    restart: always
+    ports:
+      - $HTTP_PORT:80
+      - $HTTPS_PORT:443
+
+  certonly:
+    image: deliverous/certbot
+    container_name: certonly
+    environment:
+      DOMAIN: $DOMAIN
+      EMAIL: $EMAIL
+    volumes:
+      - ./.etc/letsencrypt:/etc/letsencrypt
+    command: certbot certonly --standalone --non-interactive --agree-tos --renew-by-default --preferred-challenges http $$EMAIL $$DOMAIN
