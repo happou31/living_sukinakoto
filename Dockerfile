@@ -1,14 +1,19 @@
 FROM nginx:1.17.6
 
-ADD .env /tmp
-
 USER root
+
+ADD .env /tmp
+ADD conf/nginx/acme-challenge.conf /etc/nginx/conf.d/
+
+
+RUN mkdir /usr/share/nginx/html/letsencrypt \
+  && apt-get update \
+  && apt-get install -y certbot python-certbot-nginx
 
 RUN . /tmp/.env \
   && rm /tmp/.env \
-  && apt-get update \
-  && apt-get install -y certbot \
   && certbot certonly \
+      --nginx \
       --non-interactive \
       --agree-tos \
       --renew-by-default \
@@ -16,6 +21,3 @@ RUN . /tmp/.env \
       -m "$EMAIL" \
       -d "$DOMAIN" \
   && echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot-auto renew" | sudo tee -a /etc/crontab > /dev/null
-RUN apt remove wget
-
-USER nginx
