@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "docker:init": "docker build -t nginx_with_ssl .",
-    "docker:run": "./run.sh"
+    "docker:build": "docker build -t nginx_with_ssl .",
+    "docker:start": "./npm_scripts/run.sh -d /tmp/scripts/run_cert.sh"
   },
   "dependencies": {
     "express": "^4.17.1",
