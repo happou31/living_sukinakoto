@@ -9,8 +9,7 @@ $ vi .env # Edit your environments.
 
 ```
 $ npm run docker:build # Build docker image.
-$ npm run docker:cert # Acquire cert files by letsencrypt.
-$ npm run docker:run # Start a nginx process.
+$ npm run docker:start # Acquire cert files by let'sencrypt & start a nginx process.
 ```
 
 ## debug
