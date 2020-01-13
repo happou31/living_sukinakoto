@@ -1,8 +1,11 @@
 #!/bin/bash
 
-if [ -e /tmp/once ]; then
-  . /tmp/env/.env
+. /tmp/env/.env
 
+# nginxのSSL用設定ファイルが存在しない場合のみ実行する
+if [ -e /etc/letsencrypt/live/$DOMAIN ]; then
+  echo "Certification files exists in /etc/letsencrypt/live/$DOMAIN, skip certbot."
+else
   certbot --nginx \
       --non-interactive \
       --agree-tos \
@@ -16,7 +19,6 @@ if [ -e /tmp/once ]; then
 
   echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | tee -a /etc/crontab > /dev/null
 
-  rm /tmp/once
 fi
 
 nginx -g 'daemon off;'
