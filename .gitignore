@@ -10,3 +10,5 @@ oauth_info.json
 
 .log/*
 !.log/.gitkeep
+
+yarn-error.log
