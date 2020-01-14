@@ -18,9 +18,8 @@ docker run \
   $OPTS \
   -p $HTTP_PORT:80 \
   -p $HTTPS_PORT:443 \
-  -v $PWD/.env:/tmp/env/.env \
+  -v $PWD/conf/nginx/sites-enabled:/etc/nginx/sites-enabled \
   -v $PWD/.etc/letsencrypt:/etc/letsencrypt \
-  -v $PWD/.etc/nginx:/usr/share/nginx \
   -v $PWD/scripts/:/tmp/scripts \
   nginx_with_ssl:latest \
   $EXEC
