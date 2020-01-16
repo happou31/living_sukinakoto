@@ -6,5 +6,6 @@
   "eslint.run": "onSave",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\bash.exe"
 }
