@@ -12,3 +12,5 @@ oauth_info.json
 !.log/.gitkeep
 
 yarn-error.log
+
+build/
