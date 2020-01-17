@@ -5,6 +5,12 @@ LABEL maintainer "happou31 <happo31@gmail.com>"
 
 USER root
 
+RUN mkdir -p /bin/app
+
+ADD package.json /bin/app
+
+RUN cd /bin/app/ && npm install
+
 RUN mkdir -p /usr/share/nginx/html/letsencrypt \
   && mkdir ~/scripts \
   && apt-get update \

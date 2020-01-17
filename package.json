@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "docker:build": "docker build -t nginx_with_ssl .",
-    "docker:start": "./npm_scripts/run.sh /tmp/scripts/run_cert.sh",
+    "docker:start": "./npm_scripts/run.sh -d /tmp/scripts/run_cert.sh",
     "docker:shell": "./npm_scripts/run.sh -it /bin/bash",
-    "start:dev": "ts-node ./src/index.ts"
+    "start:dev": "source ./.env && ts-node ./src/index.ts",
+    "build": "tsc",
+    "start": "node ./build/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",

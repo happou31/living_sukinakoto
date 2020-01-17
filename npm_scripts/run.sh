@@ -21,5 +21,7 @@ docker run \
   -v $PWD/conf/nginx/sites-enabled:/etc/nginx/sites-enabled \
   -v $PWD/.etc/letsencrypt:/etc/letsencrypt \
   -v $PWD/scripts/:/tmp/scripts \
+  -v $PWD/build/:/bin/app \
+  -v $PWD/node_modules/:/bin/app/node_modules \
   nginx_with_ssl:latest \
   $EXEC
