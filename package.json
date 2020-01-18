@@ -6,6 +6,8 @@
   "scripts": {
     "docker:build": "docker build -t nginx_with_ssl .",
     "docker:start": "./npm_scripts/run.sh -d /tmp/scripts/run_cert.sh",
+    "docker:stop": "docker stop nginx_with_ssl",
+    "docker:restart": "yarn docker:stop && yarn docker:start",
     "docker:shell": "./npm_scripts/run.sh -it /bin/bash",
     "start:dev": "source ./.env && ts-node ./src/index.ts",
     "build": "tsc",
