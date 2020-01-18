@@ -8,8 +8,11 @@ oauth_info.json
 .etc/nginx/*
 !.etc/nginx/.gitkeep
 
-.log/*
-!.log/.gitkeep
+.log/nginx/*
+!.log/nginx/.gitkeep
+
+.log/nodejs/*
+!.log/nodejs/.gitkeep
 
 yarn-error.log
 
