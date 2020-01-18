@@ -1,9 +1,19 @@
-export default interface OAuth2RequestStartParam {
-  client_id: string;
-  redirect_uri: string;
-  response_type: "code";
+export interface OAuth2RequestParam {
+  clientId: string;
+  redirectUri: string;
+  responseType: "code";
 
   scope: string;
 
-  access_type: "online" | "offline";
+  accessType: "online" | "offline";
+}
+
+export interface OAuth2ExchangeRequestParam {
+  code: string;
+  clientId: string;
+  clientSecret: string;
+
+  redirectUri: string;
+
+  grantType?: string;
 }
