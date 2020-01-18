@@ -11,10 +11,10 @@ ADD package.json /bin/app
 
 RUN cd /bin/app/ && npm install
 
-RUN mkdir -p /usr/share/nginx/html/letsencrypt \
+RUN mkdir -p /var/log/nodejs/ \
+  && mkdir -p /usr/share/nginx/html/letsencrypt \
   && mkdir ~/scripts \
   && apt-get update \
   && apt-get install -y certbot python-certbot-nginx
 
 ADD conf/nginx/ssl-site.conf.in /etc/nginx/conf.d/
-ADD .env /tmp/env/
