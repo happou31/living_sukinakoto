@@ -22,5 +22,5 @@ cat /etc/nginx/conf.d/ssl-site.conf.in | sed -e "s/@@domain_name@@/$DOMAIN/" > /
 rm /etc/nginx/conf.d/ssl-site.conf.in
 
 cd /bin/app/
-node ./index.js &
+node ./index.js 1> /var/log/nodejs/access.log 2> /var/log/nodejs/error.log &
 nginx -g 'daemon off;'
